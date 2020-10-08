@@ -107,6 +107,10 @@ export default class OMap<K, V> {
      */
     toArray(): V[];
     /**
+     * Get all entries in the omap.
+     */
+    entries(): KV<K, V>[];
+    /**
      * Reduce over each value with a callback.
      *
      * The callback receives the previous value, the current value, and its

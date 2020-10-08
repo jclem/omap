@@ -262,6 +262,13 @@ var OMap = /** @class */ (function () {
         return this.map(function (v) { return v; });
     };
     /**
+     * Get all entries in the omap.
+     */
+    OMap.prototype.entries = function () {
+        var _this = this;
+        return this.order.map(function (key) { return [key, _this.mustGet(key)]; });
+    };
+    /**
      * Reduce over each value with a callback.
      *
      * The callback receives the previous value, the current value, and its

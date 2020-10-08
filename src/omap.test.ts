@@ -1,4 +1,4 @@
-import OMap, {MissingKeyError} from './omap'
+import OMap, {KV, MissingKeyError} from './omap'
 
 describe('.length', () => {
   test('returns 0 when empty', () => {
@@ -232,6 +232,18 @@ describe('.toArray', () => {
     ])
 
     expect(map.toArray()).toEqual([0, 1, 2])
+  })
+})
+
+describe('.entries', () => {
+  test('returns the ordered map entires', () => {
+    const entries: KV<string, number>[] = [['zero', 0],
+      ['one', 1],
+      ['two', 2]]
+
+    const map = new OMap(entries)
+
+    expect(map.entries()).toEqual(entries)
   })
 })
 
